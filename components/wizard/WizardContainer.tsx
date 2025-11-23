@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useWizard } from "../../contexts/WizardContext";
 import StepIndicator from "./StepIndicator";
 import ExperienceSelector from "./ExperienceSelector";
@@ -40,7 +40,7 @@ const WizardContainer: React.FC = () => {
     }
   }, []);
 
-  const renderStep = () => {
+  const currentStepComponent = useMemo(() => {
     switch (currentStep) {
       case 1:
         return (
@@ -121,7 +121,7 @@ const WizardContainer: React.FC = () => {
       default:
         return null;
     }
-  };
+  }, [currentStep, preferences, updatePreference]);
 
   const handleFindDestinations = () => {
     if (isLastStep() && isStepValid(currentStep)) {
@@ -143,7 +143,7 @@ const WizardContainer: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <StepIndicator />
 
-      <div className="mt-8">{renderStep()}</div>
+      <div className="mt-8">{currentStepComponent}</div>
 
       <div className="flex justify-between mt-8">
         <button

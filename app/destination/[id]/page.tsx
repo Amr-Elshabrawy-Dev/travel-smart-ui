@@ -118,7 +118,7 @@ const DestinationDetailsPage: React.FC = () => {
           </div>
           <div className="bg-white p-4 rounded-lg text-center">
             <div className="flex justify-center items-center gap-1">
-              <span className="text-yellow-400">⭐</span>
+              <Icon name="Star" size={20} className="text-yellow-400" />
               <span className="text-2xl font-bold">
                 {destination.accommodations.rating}
               </span>
@@ -316,7 +316,7 @@ const DestinationDetailsPage: React.FC = () => {
                 <div>
                   <p className="font-medium">Rating</p>
                   <div className="flex items-center">
-                    <span className="text-yellow-400">⭐</span>
+                    <Icon name="Star" size={18} className="text-yellow-400" />
                     <span className="ml-1">
                       {destination.accommodations.rating}/5
                     </span>
@@ -402,7 +402,6 @@ const DestinationDetailsPage: React.FC = () => {
               width="100%"
               height="100%"
               allowFullScreen
-              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title={`Map of ${destination.name}, ${destination.country}`}
             />
@@ -426,7 +425,7 @@ const DestinationDetailsPage: React.FC = () => {
           <button
             onClick={() => {
               // Navigate back to home and show recommendations
-              window.location.href = "/";
+              window.location.href = "/journey";
             }}
             className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors mr-4"
           >

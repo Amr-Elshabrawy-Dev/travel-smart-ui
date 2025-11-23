@@ -31,6 +31,8 @@ import {
   ChevronLeft,
   ChevronRight,
   XCircle,
+  Instagram,
+  Facebook,
   LucideIcon,
 } from "lucide-react";
 
@@ -66,7 +68,9 @@ type IconName =
   | "CloudRain"
   | "ChevronRight"
   | "ChevronLeft"
-  | "XCircle";
+  | "XCircle"
+  | "Instagram"
+  | "Facebook";
 
 const iconMap: Record<IconName, LucideIcon> = {
   Waves,
@@ -101,6 +105,8 @@ const iconMap: Record<IconName, LucideIcon> = {
   ChevronRight,
   ChevronLeft,
   XCircle,
+  Instagram,
+  Facebook,
 };
 
 interface IconProps {
