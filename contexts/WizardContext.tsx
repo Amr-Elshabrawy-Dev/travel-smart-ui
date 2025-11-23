@@ -7,6 +7,7 @@ import React, {
   ReactNode,
   useCallback,
   useEffect,
+  useMemo,
 } from "react";
 import { UserPreferences } from "../travel_smart_mockdata";
 
@@ -14,9 +15,6 @@ import { UserPreferences } from "../travel_smart_mockdata";
 type StepValidation = {
   [key in keyof UserPreferences]: (value: UserPreferences[key]) => boolean;
 };
-
-// Step identifiers
-export type StepKey = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 interface WizardContextValue {
   preferences: UserPreferences;
@@ -31,7 +29,10 @@ interface WizardContextValue {
   goToStep: (step: number) => void;
   isStepValid: (step: number) => boolean;
   isLastStep: () => boolean;
-  stepValidations: StepValidation;
+  validateStep: <K extends keyof UserPreferences>(
+    step: K,
+    value: UserPreferences[K]
+  ) => boolean;
 }
 
 const initialPreferences: UserPreferences = {
@@ -151,18 +152,39 @@ export const WizardProvider: React.FC<{ children: ReactNode }> = ({
     return currentStep === totalSteps;
   }, [currentStep]);
 
-  const value: WizardContextValue = {
-    preferences,
-    currentStep,
-    totalSteps,
-    updatePreference,
-    nextStep,
-    previousStep,
-    goToStep,
-    isStepValid,
-    isLastStep,
-    stepValidations,
-  };
+  const validateStep = useCallback(
+    <K extends keyof UserPreferences>(step: K, value: UserPreferences[K]) => {
+      return stepValidations[step](value);
+    },
+    []
+  );
+
+  const value: WizardContextValue = useMemo(
+    () => ({
+      preferences,
+      currentStep,
+      totalSteps,
+      updatePreference,
+      nextStep,
+      previousStep,
+      goToStep,
+      isStepValid,
+      isLastStep,
+      validateStep,
+    }),
+    [
+      preferences,
+      currentStep,
+      totalSteps,
+      updatePreference,
+      nextStep,
+      previousStep,
+      goToStep,
+      isStepValid,
+      isLastStep,
+      validateStep,
+    ]
+  );
 
   return (
     <WizardContext.Provider value={value}>{children}</WizardContext.Provider>
