@@ -44,6 +44,7 @@ const OptionSelector = <T extends OptionType>({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group">
           {options.map((option) => (
             <button
+              type="button"
               key={option.id}
               onClick={() => onChange(option.id)}
               aria-pressed={selected === option.id ? "true" : "false"}
@@ -112,9 +113,10 @@ const OptionSelector = <T extends OptionType>({
       <div className="flex flex-wrap justify-center gap-3" role="group">
         {options.map((option) => (
           <button
+            type="button"
             key={option.id}
             onClick={() => onChange(option.id)}
-            aria-pressed={selected === option.id}
+            aria-pressed={selected === option.id ? "true" : "false"}
             className={`
               px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200
               shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
