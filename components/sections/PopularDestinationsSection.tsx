@@ -5,49 +5,77 @@ import DestinationCard from "../DestinationCard";
 import { destinations } from "../../travel_smart_mockdata";
 
 export default function PopularDestinationsSection() {
+  // Animation variants for the section
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1] as const, // Custom easing for smooth motion
+      },
+    },
+  };
+
+  // Animation variants for staggered cards
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1] as const,
+      },
+    },
+  };
+
   return (
     <motion.section
       className="py-20 bg-gray-50"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25, margin: "0px" }}
+      variants={sectionVariants}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2
-            className="text-3xl font-extrabold text-gray-900 sm:text-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Popular Destinations
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-xl text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          </h2>
+          <p className="mt-4 text-xl text-gray-600">
             Curated by travelers, powered by AI insights
-          </motion.p>
+          </p>
         </div>
+
+        {/* Cards Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
+          variants={containerVariants}
         >
           <DestinationCard
             iconName="MapPin"
@@ -59,10 +87,7 @@ export default function PopularDestinationsSection() {
             matchPercentage={95}
             matchText="Match"
             weatherText="Perfect Weather"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            variants={cardVariants}
           />
 
           <DestinationCard
@@ -76,10 +101,7 @@ export default function PopularDestinationsSection() {
             matchText="Match"
             weatherText="Nightlife Hotspot"
             sunColor="purple-400"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            variants={cardVariants}
           />
 
           <DestinationCard
@@ -93,10 +115,7 @@ export default function PopularDestinationsSection() {
             matchText="Match"
             weatherText="Affordable Luxury"
             sunColor="orange-400"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            variants={cardVariants}
           />
         </motion.div>
       </div>
