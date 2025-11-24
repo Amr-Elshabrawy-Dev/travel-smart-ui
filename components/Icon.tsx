@@ -36,7 +36,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 
-type IconName =
+export type IconName =
   | "Waves"
   | "Building"
   | "Mountain"
@@ -119,11 +119,7 @@ const Icon = ({ name, className = "", size = 24 }: IconProps) => {
   const IconComponent = iconMap[name as IconName];
 
   if (!IconComponent) {
-    return (
-      <span className={className} style={{ fontSize: size }}>
-        ❌
-      </span>
-    ); // Fallback icon
+    return <span className={`${className} text-[${size}px]`}>❌</span>; // Fallback icon
   }
 
   return <IconComponent className={className} size={size} />;

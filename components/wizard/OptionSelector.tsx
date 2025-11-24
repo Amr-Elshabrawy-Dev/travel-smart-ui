@@ -41,14 +41,15 @@ const OptionSelector = <T extends OptionType>({
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group">
           {options.map((option) => (
             <button
               key={option.id}
               onClick={() => onChange(option.id)}
+              aria-pressed={selected === option.id ? "true" : "false"}
               className={`
                 group p-6 rounded-xl border-2 text-left transition-all duration-200
-                hover:shadow-md hover:scale-[1.02]
+                hover:shadow-md hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                 ${
                   selected === option.id
                     ? "border-blue-600 bg-blue-50 shadow-lg"
@@ -108,14 +109,15 @@ const OptionSelector = <T extends OptionType>({
         </div>
       )}
 
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3" role="group">
         {options.map((option) => (
           <button
             key={option.id}
             onClick={() => onChange(option.id)}
+            aria-pressed={selected === option.id}
             className={`
               px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200
-              shadow-sm hover:shadow-md
+              shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
               ${
                 selected === option.id
                   ? "bg-blue-600 text-white shadow-lg scale-105"
