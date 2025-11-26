@@ -31,6 +31,10 @@ import {
   ChevronLeft,
   ChevronRight,
   XCircle,
+  Shield,
+  Sparkles,
+  ArrowRight,
+  Clock,
   Instagram,
   Facebook,
   LucideIcon,
@@ -69,6 +73,10 @@ export type IconName =
   | "ChevronRight"
   | "ChevronLeft"
   | "XCircle"
+  | "Shield"
+  | "Sparkles"
+  | "ArrowRight"
+  | "Clock"
   | "Instagram"
   | "Facebook";
 
@@ -105,6 +113,10 @@ const iconMap: Record<IconName, LucideIcon> = {
   ChevronRight,
   ChevronLeft,
   XCircle,
+  Shield,
+  Sparkles,
+  ArrowRight,
+  Clock,
   Instagram,
   Facebook,
 };

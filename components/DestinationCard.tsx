@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "./Icon";
 import type { DestinationCardProps } from "../types/destination-card";
 
@@ -24,14 +24,23 @@ const DestinationCard = ({
 }: DestinationCardProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
   const [imageError, setImageError] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-  // Color mapping for dynamic icon colors
-  const heartColorClass = heartColor.includes("-")
-    ? `text-${heartColor}`
-    : `text-red-400`;
-  const sunColorClass = sunColor.includes("-")
-    ? `text-${sunColor}`
-    : `text-orange-400`;
+  // Ensure component is mounted on client side to prevent hydration issues
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Build optimized image URL with proper parameter handling
+  const getImageUrl = (url: string) => {
+    // Check if URL already has query parameters
+    const separator = url.includes("?") ? "&" : "?";
+    // Only add Unsplash optimization parameters for Unsplash URLs
+    if (url.includes("unsplash.com")) {
+      return `${url}${separator}w=800&q=80&auto=format&fit=crop`;
+    }
+    return url;
+  };
 
   return (
     <motion.article
@@ -57,13 +66,13 @@ const DestinationCard = ({
     >
       {/* Image Section with Progressive Loading */}
       <div className="relative h-48 bg-linear-to-br from-blue-50 to-purple-50 overflow-hidden">
-        {/* Loading skeleton */}
-        {!isImageLoaded && !imageError && (
+        {/* Loading skeleton - shown while not mounted or loading */}
+        {(!isMounted || (!isImageLoaded && !imageError)) && (
           <div className="absolute inset-0 bg-linear-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse" />
         )}
 
         {/* Error state */}
-        {imageError && (
+        {isMounted && imageError && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
             <div className="text-center text-gray-400">
               <Icon name="MapPin" size={32} className="mx-auto mb-2" />
@@ -72,21 +81,23 @@ const DestinationCard = ({
           </div>
         )}
 
-        {/* Actual Image */}
-        <img
-          src={imageUrl}
-          alt={title}
-          className={`w-full h-full object-cover transition-all duration-500 transform
-                     group-hover:scale-110 ${
-                       isImageLoaded ? "opacity-100" : "opacity-0"
-                     }`}
-          onLoad={() => setIsImageLoaded(true)}
-          onError={() => {
-            setImageError(true);
-            setIsImageLoaded(false);
-          }}
-          loading="lazy"
-        />
+        {/* Actual Image - only render on client side */}
+        {isMounted && (
+          <img
+            src={getImageUrl(imageUrl)}
+            alt={title}
+            className={`w-full h-full object-cover transition-all duration-500 transform
+                       group-hover:scale-110 ${
+                         isImageLoaded ? "opacity-100" : "opacity-0"
+                       }`}
+            onLoad={() => setIsImageLoaded(true)}
+            onError={() => {
+              setImageError(true);
+              setIsImageLoaded(false);
+            }}
+            loading="lazy"
+          />
+        )}
 
         {/* Gradient overlay on hover */}
         <div
