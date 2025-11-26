@@ -9,6 +9,7 @@ import {
   Users,
   Star,
   Check,
+  Map,
   MapPin,
   Plane,
   Navigation,
@@ -54,6 +55,7 @@ export type IconName =
   | "Users"
   | "Star"
   | "Check"
+  | "Map"
   | "MapPin"
   | "Plane"
   | "Navigation"
@@ -97,6 +99,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Users,
   Star,
   Check,
+  Map,
   MapPin,
   Plane,
   Navigation,

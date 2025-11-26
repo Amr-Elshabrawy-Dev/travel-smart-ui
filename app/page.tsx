@@ -2,7 +2,7 @@
 
 import HeroSection from "../components/hero/HeroSection";
 import ProjectObjectivesSection from "../components/sections/ProjectObjectivesSection";
-import AdvantagesSection from "../components/AdvantagesSection";
+import AdvantagesSection from "../components/sections/AdvantagesSection";
 import PopularDestinationsSection from "../components/sections/PopularDestinationsSection";
 import ExclusiveOffersSection from "../components/sections/ExclusiveOffersSection";
 import FooterSection from "../components/sections/FooterSection";
