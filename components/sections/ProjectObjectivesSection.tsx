@@ -3,125 +3,273 @@
 import { motion } from "framer-motion";
 import Icon from "../Icon";
 
+const objectives = [
+  {
+    icon: "Zap" as const,
+    title: "Smart Recommendations",
+    description:
+      "Our AI analyzes thousands of factors to recommend destinations that perfectly match your preferences, travel style, budget, and personality.",
+    gradient: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-50",
+    hoverBg: "group-hover:bg-blue-100",
+    iconColor: "text-blue-600",
+  },
+  {
+    icon: "Heart" as const,
+    title: "Personalized Experience",
+    description:
+      "From beach getaways to adventure travel, we create uniquely tailored experiences that remember your preferences for future trips.",
+    gradient: "from-pink-500 to-rose-500",
+    bgColor: "bg-pink-50",
+    hoverBg: "group-hover:bg-pink-100",
+    iconColor: "text-pink-600",
+  },
+  {
+    icon: "Globe" as const,
+    title: "Global Expertise",
+    description:
+      "Access insider knowledge about destinations worldwide, including weather patterns, cultural insights, and local experiences.",
+    gradient: "from-purple-500 to-indigo-500",
+    bgColor: "bg-purple-50",
+    hoverBg: "group-hover:bg-purple-100",
+    iconColor: "text-purple-600",
+  },
+];
+
+const stats = [
+  {
+    value: "500K+",
+    label: "Destinations Analyzed",
+    icon: "MapPin" as const,
+  },
+  {
+    value: "24/7",
+    label: "AI Assistance",
+    icon: "Clock" as const,
+  },
+  {
+    value: "98%",
+    label: "Satisfaction Rate",
+    icon: "Heart" as const,
+  },
+  {
+    value: "150+",
+    label: "Countries Covered",
+    icon: "Globe" as const,
+  },
+];
+
 export default function ProjectObjectivesSection() {
   return (
-    <motion.section
-      className="py-20 bg-white"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-linear-to-b from-gray-50 to-white overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+        <div className="absolute -top-24 left-1/4 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2
-            className="text-3xl font-extrabold text-gray-900 sm:text-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-100 to-purple-100 rounded-full mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Our Mission
+            <Icon name="Target" size={16} className="text-blue-600" />
+            <span className="text-sm font-semibold text-blue-800">
+              Our Mission
+            </span>
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Revolutionizing Travel
+            </span>
           </motion.h2>
+
           <motion.p
-            className="mt-4 text-xl text-gray-600"
+            className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Revolutionizing travel planning through intelligent personalization
+            Transforming travel planning through intelligent personalization and
+            cutting-edge AI technology
           </motion.p>
         </div>
+
+        {/* Main Objectives Cards */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={{
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.3,
+                staggerChildren: 0.2,
               },
             },
           }}
         >
-          <motion.div
-            className="text-center"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6 }}
-          >
+          {objectives.map((objective, index) => (
             <motion.div
-              className="mx-auto h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center"
-              whileHover={{ scale: 1.1, rotate: 360 }}
+              key={index}
+              className={`group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden`}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <Icon name="Zap" size={32} className="text-blue-600" />
+              {/* Background gradient on hover */}
+              <div
+                className={`absolute inset-0 bg-linear-to-br ${objective.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+              />
+
+              {/* Icon */}
+              <motion.div
+                className={`relative w-16 h-16 ${objective.bgColor} ${objective.hoverBg} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300`}
+                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Icon
+                  name={objective.icon}
+                  size={32}
+                  className={objective.iconColor}
+                />
+              </motion.div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                {objective.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed text-center">
+                {objective.description}
+              </p>
+
+              {/* Bottom accent line */}
+              <motion.div
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${objective.gradient}`}
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.div>
-            <h3 className="mt-6 text-xl font-semibold text-gray-900">
-              Smart Recommendations
-            </h3>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              Our AI analyzes thousands of factors to recommend destinations
-              that perfectly match your preferences, travel style, budget, and
-              personality.
-            </p>
-          </motion.div>
-          <motion.div
-            className="text-center"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6 }}
-          >
+          ))}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-1"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-white rounded-3xl p-8 sm:p-12">
             <motion.div
-              className="mx-auto h-16 w-16 bg-green-100 rounded-full flex items-center justify-center"
-              whileHover={{ scale: 1.1, rotate: 360 }}
+              className="grid grid-cols-2 lg:grid-cols-4 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center"
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
+                >
+                  <motion.div
+                    className="inline-flex items-center justify-center w-12 h-12 bg-linear-to-br from-blue-100 to-purple-100 rounded-xl mb-3"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <Icon
+                      name={stat.icon}
+                      size={24}
+                      className="text-blue-600"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="text-4xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 200,
+                      delay: 0.2 + index * 0.1,
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="text-sm text-gray-600 font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-gray-600 mb-6">
+            Ready to experience intelligent travel planning?
+          </p>
+          <motion.a
+            href="/journey"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-blue-500/50 transition-shadow"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Icon name="Sparkles" size={20} />
+            <span>Start Your Journey</span>
+            <motion.div
+              className="overflow-hidden"
+              initial={{ width: 0 }}
+              whileHover={{ width: 20 }}
               transition={{ duration: 0.3 }}
             >
-              <Icon name="Heart" size={32} className="text-green-600" />
+              <Icon name="ArrowRight" size={20} className="ml-1" />
             </motion.div>
-            <h3 className="mt-6 text-xl font-semibold text-gray-900">
-              Personalized Experience
-            </h3>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              From beach getaways to adventure travel, we create uniquely
-              tailored experiences that remember your preferences for future
-              trips.
-            </p>
-          </motion.div>
-          <motion.div
-            className="text-center"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="mx-auto h-16 w-16 bg-purple-100 rounded-full flex items-center justify-center"
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Icon name="Globe" size={32} className="text-purple-600" />
-            </motion.div>
-            <h3 className="mt-6 text-xl font-semibold text-gray-900">
-              Global Expertise
-            </h3>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              Access insider knowledge about destinations worldwide, including
-              weather patterns, cultural insights, and local experiences that
-              you won't find elsewhere.
-            </p>
-          </motion.div>
+          </motion.a>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

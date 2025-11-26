@@ -82,7 +82,7 @@ export default function AdvantagesSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-100 to-purple-100 rounded-full mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -101,7 +101,7 @@ export default function AdvantagesSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               AI-Powered Advantages
             </span>
           </motion.h2>
@@ -147,13 +147,13 @@ export default function AdvantagesSection() {
             >
               {/* Gradient border effect on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}
+                className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}
               />
-              <div className="absolute inset-[1px] bg-white rounded-2xl -z-10" />
+              <div className="absolute inset-px bg-white rounded-2xl -z-10" />
 
               {/* Icon with gradient background */}
               <motion.div
-                className={`relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} mb-4`}
+                className={`relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br ${feature.gradient} mb-4`}
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               >
@@ -161,7 +161,7 @@ export default function AdvantagesSection() {
               </motion.div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
                 {feature.title}
               </h3>
 
@@ -173,7 +173,7 @@ export default function AdvantagesSection() {
               {/* Stats */}
               <div className="flex items-baseline gap-2 pt-4 border-t border-gray-100">
                 <motion.span
-                  className={`text-3xl font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}
+                  className={`text-3xl font-bold bg-linear-to-r ${feature.gradient} bg-clip-text text-transparent`}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{
@@ -192,7 +192,7 @@ export default function AdvantagesSection() {
 
               {/* Hover indicator */}
               <motion.div
-                className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 origin-left"
+                className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-purple-500 origin-left"
                 initial={{ scaleX: 0 }}
                 whileHover={{ scaleX: 1 }}
                 transition={{ duration: 0.3 }}
@@ -209,7 +209,7 @@ export default function AdvantagesSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-6 px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
+          <div className="inline-flex items-center gap-6 px-6 py-4 bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
             <div className="flex items-center gap-2 text-sm">
               <Icon name="Users" size={18} className="text-blue-600" />
               <span className="text-gray-700">

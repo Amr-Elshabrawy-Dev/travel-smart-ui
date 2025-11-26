@@ -64,7 +64,7 @@ export default function HeroSection() {
   ]);
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 1200], [1, 1.1]);
+  const scale = useTransform(scrollY, [0, 800], [1, 1.2]);
 
   // Pre-calculate particle properties to avoid hydration issues
   const [particleProps] = useState(() =>

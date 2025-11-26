@@ -36,6 +36,7 @@ import {
   Sparkles,
   ArrowRight,
   Clock,
+  Target,
   ChevronUp,
   Linkedin,
   Twitter,
@@ -82,6 +83,7 @@ export type IconName =
   | "Sparkles"
   | "ArrowRight"
   | "Clock"
+  | "Target"
   | "ChevronUp"
   | "Linkedin"
   | "Twitter"
@@ -126,6 +128,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Sparkles,
   ArrowRight,
   Clock,
+  Target,
   ChevronUp,
   Linkedin,
   Twitter,
