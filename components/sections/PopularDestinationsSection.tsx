@@ -244,7 +244,7 @@ export default function PopularDestinationsSection() {
               matchPercentage={destination.matchPercentage}
               matchText={destination.matchText}
               weatherText={destination.weatherText}
-              sunColor={destination.sunColor as any}
+              sunColor={destination.sunColor as string}
               variants={cardVariants}
             />
           ))}

@@ -3,7 +3,7 @@
 import { WizardProvider } from "../../contexts/WizardContext";
 import WizardContainer from "../../components/wizard/WizardContainer";
 import Icon from "../../components/Icon";
-import AdvantagesSection from "../../components/AdvantagesSection";
+import AdvantagesSection from "@/components/sections/AdvantagesSection";
 
 export default function JourneyPage() {
   return (

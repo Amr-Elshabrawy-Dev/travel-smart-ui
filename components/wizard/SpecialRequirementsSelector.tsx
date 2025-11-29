@@ -2,10 +2,7 @@
 
 import React from "react";
 import Icon from "../Icon";
-import {
-  specialRequirements,
-  SpecialRequirement,
-} from "../../travel_smart_mockdata";
+import { specialRequirements } from "../../travel_smart_mockdata";
 
 interface SpecialRequirementsSelectorProps {
   selected: string[];

@@ -220,8 +220,8 @@ export default function HeroSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            Tell us what you're looking for and let our advanced AI find the
-            perfect destination tailored just for you. Experience travel
+            Tell us what you&apos;re looking for and let our advanced AI find
+            the perfect destination tailored just for you. Experience travel
             planning like never before.
           </motion.p>
 

@@ -17,8 +17,7 @@ const DestinationCard = ({
   matchPercentage,
   matchText,
   weatherText,
-  heartColor = "red-400",
-  sunColor = "orange-400",
+
   onClick,
   variants,
 }: DestinationCardProps) => {
