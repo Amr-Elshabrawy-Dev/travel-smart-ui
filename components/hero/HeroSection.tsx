@@ -129,8 +129,9 @@ export default function HeroSection() {
 
       {/* Fallback gradient */}
       <div
-        className="absolute inset-0 bg-linear-to-br from-blue-600 via-purple-600 to-pink-500"
-        style={{ opacity: imagesLoaded.some((loaded) => loaded) ? 0 : 1 }}
+        className={`absolute inset-0 bg-linear-to-br from-blue-600 via-purple-600 to-pink-500 transition-opacity duration-1000 ${
+          imagesLoaded.some((loaded) => loaded) ? "opacity-0" : "opacity-100"
+        }`}
       />
 
       {/* Animated Gradient Overlays */}
