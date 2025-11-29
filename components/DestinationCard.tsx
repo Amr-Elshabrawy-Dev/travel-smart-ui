@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Icon from "./Icon";
 import type { DestinationCardProps } from "../types/destination-card";
@@ -29,17 +30,6 @@ const DestinationCard = ({
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  // Build optimized image URL with proper parameter handling
-  const getImageUrl = (url: string) => {
-    // Check if URL already has query parameters
-    const separator = url.includes("?") ? "&" : "?";
-    // Only add Unsplash optimization parameters for Unsplash URLs
-    if (url.includes("unsplash.com")) {
-      return `${url}${separator}w=800&q=80&auto=format&fit=crop`;
-    }
-    return url;
-  };
 
   return (
     <motion.article
@@ -82,10 +72,12 @@ const DestinationCard = ({
 
         {/* Actual Image - only render on client side */}
         {isMounted && (
-          <img
-            src={getImageUrl(imageUrl)}
+          <Image
+            src={imageUrl}
             alt={title}
-            className={`w-full h-full object-cover transition-all duration-500 transform
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition-all duration-500 transform
                        group-hover:scale-110 ${
                          isImageLoaded ? "opacity-100" : "opacity-0"
                        }`}
@@ -94,7 +86,6 @@ const DestinationCard = ({
               setImageError(true);
               setIsImageLoaded(false);
             }}
-            loading="lazy"
           />
         )}
 
