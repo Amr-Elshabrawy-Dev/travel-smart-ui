@@ -1,4 +1,4 @@
-import { UserPreferences } from "../travel_smart_mockdata";
+import type { UserPreferences } from "@/data";
 
 // Step validation types
 type StepValidation = {

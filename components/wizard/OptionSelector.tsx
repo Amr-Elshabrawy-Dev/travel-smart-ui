@@ -1,14 +1,9 @@
 "use client";
 
-import type {
-  TravelCompanion,
-  ActivityLevel,
-  Duration,
-  FlightDistance,
-} from "../../travel_smart_mockdata";
+import type { TravelCompanion, ActivityLevel, FlightDistance } from "@/data";
 import Icon from "../Icon";
 
-type OptionType = TravelCompanion | ActivityLevel | Duration | FlightDistance;
+type OptionType = TravelCompanion | ActivityLevel | FlightDistance;
 
 interface OptionSelectorProps<T extends OptionType> {
   options: T[];

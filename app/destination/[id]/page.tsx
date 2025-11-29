@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { getDestinationById } from "../../../travel_smart_mockdata";
+import { getDestinationById } from "@/data";
 import Icon from "../../../components/Icon";
 
 const DestinationDetailsPage: React.FC = () => {

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import DestinationCard from "../DestinationCard";
-import { destinations } from "../../travel_smart_mockdata";
+import { destinations } from "@/data";
 import Icon from "../Icon";
 
 const categories = ["All", "Beach", "City", "Adventure", "Luxury"];

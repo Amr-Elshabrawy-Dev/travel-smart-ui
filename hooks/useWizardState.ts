@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { UserPreferences } from "../travel_smart_mockdata";
+import type { UserPreferences } from "@/data";
 
 const initialPreferences: UserPreferences = {
   experienceType: "",

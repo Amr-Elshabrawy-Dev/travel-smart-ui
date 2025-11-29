@@ -1,6 +1,6 @@
 "use client";
 
-import type { ExperienceType } from "../../travel_smart_mockdata";
+import type { ExperienceType } from "@/data";
 import Icon from "../Icon";
 
 interface ExperienceSelectorProps {

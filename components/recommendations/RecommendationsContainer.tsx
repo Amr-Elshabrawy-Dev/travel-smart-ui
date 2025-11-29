@@ -2,7 +2,7 @@
 
 import React, { useMemo } from "react";
 import { useWizard } from "../../contexts/WizardContext";
-import { getRecommendations } from "../../travel_smart_mockdata";
+import { getRecommendations } from "@/data";
 import DestinationCard from "./DestinationCard";
 
 const RecommendationsContainer: React.FC = () => {

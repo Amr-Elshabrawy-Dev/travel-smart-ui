@@ -7,7 +7,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { UserPreferences } from "../travel_smart_mockdata";
+import type { UserPreferences } from "@/data";
 import { useWizardState } from "../hooks/useWizardState";
 import { useWizardValidation } from "../hooks/useWizardValidation";
 

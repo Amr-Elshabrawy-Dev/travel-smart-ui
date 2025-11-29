@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import type { BudgetRange } from "../../travel_smart_mockdata";
+import type { BudgetRange } from "@/data";
 import Icon from "../Icon";
 
 interface BudgetSelectorProps {

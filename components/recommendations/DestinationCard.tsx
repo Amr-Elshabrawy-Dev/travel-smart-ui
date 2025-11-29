@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useWizard } from "../../contexts/WizardContext";
-import type { Destination } from "../../travel_smart_mockdata";
+import type { Destination } from "@/data";
 
 interface DestinationCardProps {
   destination: Destination;

@@ -15,7 +15,7 @@ import {
   budgetRanges,
   durations,
   flightDistances,
-} from "../../travel_smart_mockdata";
+} from "@/data";
 
 const WizardContainer: React.FC = () => {
   const {
