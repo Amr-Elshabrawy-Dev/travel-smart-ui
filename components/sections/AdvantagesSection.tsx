@@ -20,7 +20,7 @@ const features: Feature[] = [
       "Our AI achieves unparalleled accuracy in destination matching, ensuring you get recommendations you'll truly love.",
     stat: "95%",
     statLabel: "Match Rate",
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-blue-600 to-purple-600",
   },
   {
     icon: "DollarSign",
@@ -29,7 +29,7 @@ const features: Feature[] = [
       "Get real-time pricing insights and budget optimization suggestions to make the most of your travel dollars.",
     stat: "$847",
     statLabel: "Avg Saved",
-    gradient: "from-green-500 to-emerald-500",
+    gradient: "from-green-600 to-emerald-600",
   },
   {
     icon: "Zap",
@@ -38,7 +38,7 @@ const features: Feature[] = [
       "Receive personalized recommendations in seconds. Our AI processes millions of data points to find your perfect match.",
     stat: "<3s",
     statLabel: "Response Time",
-    gradient: "from-yellow-500 to-orange-500",
+    gradient: "from-orange-500 to-amber-500",
   },
   {
     icon: "Sun",
@@ -47,7 +47,7 @@ const features: Feature[] = [
       "AI-powered weather prediction and crowd analysis help you pick the perfect dates for your ideal vacation.",
     stat: "365",
     statLabel: "Days Analyzed",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-purple-600 to-pink-600",
   },
   {
     icon: "Star",
@@ -56,7 +56,7 @@ const features: Feature[] = [
       "Discover hidden gems and local experiences that only our AI can uncover, curated specifically for you.",
     stat: "10K+",
     statLabel: "Hidden Gems",
-    gradient: "from-red-500 to-rose-500",
+    gradient: "from-pink-600 to-rose-600",
   },
   {
     icon: "Shield",
@@ -65,7 +65,7 @@ const features: Feature[] = [
       "Your data is protected with enterprise-grade security. Travel with confidence knowing your information is safe.",
     stat: "100%",
     statLabel: "Encrypted",
-    gradient: "from-indigo-500 to-blue-500",
+    gradient: "from-indigo-600 to-blue-600",
   },
 ];
 

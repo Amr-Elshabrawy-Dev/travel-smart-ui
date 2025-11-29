@@ -1,0 +1,79 @@
+/* Theme Configuration - TravelSmart UI */
+
+/* ========================================
+   BRAND COLORS & GRADIENTS
+   ======================================== */
+
+:root {
+  /* Primary Brand Gradient (Most Common) */
+  --gradient-primary: linear-gradient(to right, #2563eb, #9333ea, #ec4899);
+  --gradient-primary-br: linear-gradient(
+    to bottom right,
+    #2563eb,
+    #9333ea,
+    #ec4899
+  );
+
+  /* Secondary Gradients for Specific Use Cases */
+  --gradient-success: linear-gradient(to right, #10b981, #059669);
+  --gradient-info: linear-gradient(to right, #3b82f6, #06b6d4);
+  --gradient-warning: linear-gradient(to right, #f59e0b, #f97316);
+  --gradient-accent: linear-gradient(to right, #ec4899, #f43f5e);
+
+  /* Subtle Background Gradients */
+  --gradient-bg-light: linear-gradient(to bottom, #ffffff, #f9fafb, #ffffff);
+  --gradient-bg-blue: linear-gradient(to bottom, #f9fafb, #eff6ff, #ffffff);
+  --gradient-bg-purple: linear-gradient(to bottom, #f9fafb, #faf5ff, #ffffff);
+
+  /* Badge/Pill Gradients */
+  --gradient-badge: linear-gradient(to right, #dbeafe, #e9d5ff);
+
+  /* ========================================
+     ANIMATION TIMINGS
+     ======================================== */
+
+  /* Standard Easing Functions */
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Duration Tokens */
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 0.8s;
+  --duration-slower: 1s;
+
+  /* Stagger Delays */
+  --stagger-xs: 0.05s;
+  --stagger-sm: 0.1s;
+  --stagger-md: 0.15s;
+  --stagger-lg: 0.2s;
+
+  /* ========================================
+     DECORATIVE ELEMENTS
+     ======================================== */
+
+  /* Background Blur Colors */
+  --blur-blue: rgba(191, 219, 254, 0.3);
+  --blur-purple: rgba(221, 214, 254, 0.3);
+  --blur-pink: rgba(251, 207, 232, 0.2);
+
+  /* Shadow Tokens */
+  --shadow-brand: 0 10px 40px -10px rgba(37, 99, 235, 0.3);
+  --shadow-brand-lg: 0 20px 60px -15px rgba(37, 99, 235, 0.4);
+}
+
+/* ========================================
+   TAILWIND UTILITIES
+   ======================================== */
+
+@theme inline {
+  /* Animation Utilities */
+  --transition-smooth: all var(--duration-normal) var(--ease-smooth);
+  --transition-fast: all var(--duration-fast) var(--ease-smooth);
+
+  /* Custom Gradient Classes */
+  --color-gradient-primary-start: #2563eb;
+  --color-gradient-primary-mid: #9333ea;
+  --color-gradient-primary-end: #ec4899;
+}

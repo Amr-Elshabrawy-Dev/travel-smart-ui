@@ -15,8 +15,10 @@ export default function JourneyPage() {
             <Icon name="Zap" size={16} className="mr-2" />
             AI-Powered Travel Planning
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-4">
-            Find Your Perfect Destination
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4">
+            <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Find Your Perfect Destination
+            </span>
           </h1>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-600">
             Answer a few questions and let our advanced AI create personalized

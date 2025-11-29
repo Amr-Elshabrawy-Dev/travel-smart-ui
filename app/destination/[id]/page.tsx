@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { getDestinationById } from "../../../travel_smart_mockdata";
 import Icon from "../../../components/Icon";
@@ -34,15 +34,18 @@ const DestinationDetailsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section with Image Gallery */}
-      <div className="relative h-96 bg-gray-200 overflow-hidden">
-        <img
+      {/* Hero Image Carousel */}
+      <div className="relative h-96 overflow-hidden">
+        <Image
           src={destination.images[currentImageIndex]}
-          alt={`${destination.name} - ${destination.country}`}
-          className="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+          alt={`${destination.name} - Image ${currentImageIndex + 1}`}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
         />
 
-        {/* Navigation arrows */}
+        {/* Navigation Buttons */}
         {destination.images.length > 1 && (
           <>
             <button

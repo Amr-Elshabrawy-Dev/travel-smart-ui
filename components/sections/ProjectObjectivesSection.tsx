@@ -9,7 +9,7 @@ const objectives = [
     title: "Smart Recommendations",
     description:
       "Our AI analyzes thousands of factors to recommend destinations that perfectly match your preferences, travel style, budget, and personality.",
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-blue-600 to-purple-600",
     bgColor: "bg-blue-50",
     hoverBg: "group-hover:bg-blue-100",
     iconColor: "text-blue-600",
@@ -19,7 +19,7 @@ const objectives = [
     title: "Personalized Experience",
     description:
       "From beach getaways to adventure travel, we create uniquely tailored experiences that remember your preferences for future trips.",
-    gradient: "from-pink-500 to-rose-500",
+    gradient: "from-pink-600 to-purple-600",
     bgColor: "bg-pink-50",
     hoverBg: "group-hover:bg-pink-100",
     iconColor: "text-pink-600",
@@ -29,7 +29,7 @@ const objectives = [
     title: "Global Expertise",
     description:
       "Access insider knowledge about destinations worldwide, including weather patterns, cultural insights, and local experiences.",
-    gradient: "from-purple-500 to-indigo-500",
+    gradient: "from-purple-600 to-blue-600",
     bgColor: "bg-purple-50",
     hoverBg: "group-hover:bg-purple-100",
     iconColor: "text-purple-600",
