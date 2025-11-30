@@ -177,13 +177,11 @@ export default function ExclusiveOffersSection() {
               {/* Content */}
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
-                  <motion.div
+                  <div
                     className={`${offer.iconBg} backdrop-blur-sm rounded-2xl p-3`}
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
                   >
                     <Icon name={offer.icon} size={32} className="text-white" />
-                  </motion.div>
+                  </div>
                   <div className="ml-4">
                     <h3 className="text-2xl sm:text-3xl font-bold">
                       {offer.title}

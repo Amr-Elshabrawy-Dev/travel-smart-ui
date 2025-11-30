@@ -36,7 +36,7 @@ const SpecialRequirementsSelector: React.FC<
             key={req.id}
             onClick={() => handleToggle(req.id)}
             className={`
-              p-6 rounded-xl border-2 text-left transition-all
+              p-6 rounded-xl border-2 text-left transition-all cursor-pointer
               ${
                 selected.includes(req.id)
                   ? "border-blue-600 bg-blue-50"

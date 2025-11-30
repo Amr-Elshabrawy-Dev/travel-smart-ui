@@ -141,17 +141,15 @@ export default function ProjectObjectivesSection() {
               />
 
               {/* Icon */}
-              <motion.div
+              <div
                 className={`relative w-16 h-16 ${objective.bgColor} ${objective.hoverBg} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300`}
-                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                transition={{ duration: 0.5 }}
               >
                 <Icon
                   name={objective.icon}
                   size={32}
                   className={objective.iconColor}
                 />
-              </motion.div>
+              </div>
 
               {/* Title */}
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">

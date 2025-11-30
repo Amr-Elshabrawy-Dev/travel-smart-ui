@@ -111,7 +111,7 @@ export default function FooterSection() {
                 aria-label="Email address"
               />
               <motion.button
-                className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow whitespace-nowrap"
+                className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow whitespace-nowrap cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

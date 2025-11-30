@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { WizardProvider } from "../../contexts/WizardContext";
 import WizardContainer from "../../components/wizard/WizardContainer";
 import Icon from "../../components/Icon";
@@ -36,25 +38,16 @@ export default function JourneyPage() {
 
         {/* Back to Home Link */}
         <div className="text-center mt-12">
-          <a
-            href="/"
-            className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors shadow-sm"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          <Link href="/">
+            <button className="inline-flex items-center px-8 py-4 bg-white border border-gray-200 text-gray-700 font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 hover:border-blue-200 hover:text-blue-600 transition-all duration-300 cursor-pointer group">
+              <Icon
+                name="ArrowRight"
+                size={20}
+                className="mr-2 rotate-180 group-hover:-translate-x-1 transition-transform"
               />
-            </svg>
-            Back to Home
-          </a>
+              Back to Home
+            </button>
+          </Link>
         </div>
       </div>
     </main>

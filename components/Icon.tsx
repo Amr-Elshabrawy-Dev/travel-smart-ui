@@ -1,157 +1,157 @@
 import {
-  Home,
-  Menu,
-  X,
-  Info,
-  Waves,
-  Building,
-  Mountain,
-  Castle,
-  Heart,
-  Music,
-  User,
-  Users,
-  Star,
-  Check,
-  Map,
-  MapPin,
-  Plane,
-  Navigation,
-  Globe,
-  Calendar,
-  Sunrise,
-  Zap,
-  CheckCircle,
-  DollarSign,
-  CircleDollarSign,
-  Sun,
-  Activity,
-  Footprints as Walking,
-  Baby,
   Accessibility,
+  Activity,
   Apple,
+  ArrowRight,
+  Baby,
+  Building,
+  Calendar,
+  Castle,
   Cat,
-  Thermometer,
-  CloudRain,
+  Check,
+  CheckCircle,
   ChevronLeft,
   ChevronRight,
-  XCircle,
+  ChevronUp,
+  CircleDollarSign,
+  Clock,
+  CloudRain,
+  Compass,
+  DollarSign,
+  Facebook,
+  Footprints as Walking,
+  Globe,
+  Heart,
+  Home,
+  Info,
+  Instagram,
+  Linkedin,
+  LucideIcon,
+  Map,
+  MapPin,
+  Menu,
+  Mountain,
+  Music,
+  Navigation,
+  Plane,
   Shield,
   Sparkles,
-  ArrowRight,
-  Clock,
+  Star,
+  Sun,
+  Sunrise,
   Target,
-  ChevronUp,
-  Compass,
+  Thermometer,
   TrendingUp,
-  Linkedin,
   Twitter,
-  Instagram,
-  Facebook,
-  LucideIcon,
+  User,
+  Users,
+  Waves,
+  X,
+  XCircle,
+  Zap,
 } from "lucide-react";
 
 export type IconName =
-  | "Home"
-  | "Menu"
-  | "X"
-  | "Info"
-  | "Waves"
+  | "Accessibility"
+  | "Activity"
+  | "Apple"
+  | "ArrowRight"
+  | "Baby"
   | "Building"
-  | "Mountain"
+  | "Calendar"
   | "Castle"
-  | "Heart"
-  | "Music"
-  | "User"
-  | "Users"
-  | "Star"
+  | "Cat"
   | "Check"
+  | "CheckCircle"
+  | "ChevronLeft"
+  | "ChevronRight"
+  | "ChevronUp"
+  | "CircleDollarSign"
+  | "Clock"
+  | "CloudRain"
+  | "Compass"
+  | "DollarSign"
+  | "Facebook"
+  | "Globe"
+  | "Heart"
+  | "Home"
+  | "Info"
+  | "Instagram"
+  | "Linkedin"
   | "Map"
   | "MapPin"
-  | "Plane"
+  | "Menu"
+  | "Mountain"
+  | "Music"
   | "Navigation"
-  | "Globe"
-  | "Calendar"
-  | "Sunrise"
-  | "Zap"
-  | "CheckCircle"
-  | "DollarSign"
-  | "CircleDollarSign"
-  | "Sun"
-  | "Activity"
-  | "Walking"
-  | "Baby"
-  | "Accessibility"
-  | "Apple"
-  | "Cat"
-  | "Thermometer"
-  | "CloudRain"
-  | "ChevronRight"
-  | "ChevronLeft"
-  | "XCircle"
+  | "Plane"
   | "Shield"
   | "Sparkles"
-  | "ArrowRight"
-  | "Clock"
+  | "Star"
+  | "Sun"
+  | "Sunrise"
   | "Target"
-  | "ChevronUp"
-  | "Compass"
+  | "Thermometer"
   | "TrendingUp"
-  | "Linkedin"
   | "Twitter"
-  | "Instagram"
-  | "Facebook";
+  | "User"
+  | "Users"
+  | "Walking"
+  | "Waves"
+  | "X"
+  | "XCircle"
+  | "Zap";
 
 const iconMap: Record<IconName, LucideIcon> = {
-  Home,
-  Menu,
-  X,
-  Info,
-  Waves,
+  Accessibility,
+  Activity,
+  Apple,
+  ArrowRight,
+  Baby,
   Building,
-  Mountain,
+  Calendar,
   Castle,
-  Heart,
-  Music,
-  User,
-  Users,
-  Star,
+  Cat,
   Check,
+  CheckCircle,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  CircleDollarSign,
+  Clock,
+  CloudRain,
+  Compass,
+  DollarSign,
+  Facebook,
+  Globe,
+  Heart,
+  Home,
+  Info,
+  Instagram,
+  Linkedin,
   Map,
   MapPin,
-  Plane,
+  Menu,
+  Mountain,
+  Music,
   Navigation,
-  Globe,
-  Calendar,
-  Sunrise,
-  Zap,
-  CheckCircle,
-  DollarSign,
-  CircleDollarSign,
-  Sun,
-  Activity,
-  Walking,
-  Baby,
-  Accessibility,
-  Apple,
-  Cat,
-  Thermometer,
-  CloudRain,
-  ChevronRight,
-  ChevronLeft,
-  XCircle,
+  Plane,
   Shield,
   Sparkles,
-  ArrowRight,
-  Clock,
+  Star,
+  Sun,
+  Sunrise,
   Target,
-  ChevronUp,
-  Compass,
+  Thermometer,
   TrendingUp,
-  Linkedin,
   Twitter,
-  Instagram,
-  Facebook,
+  User,
+  Users,
+  Walking,
+  Waves,
+  X,
+  XCircle,
+  Zap,
 };
 
 interface IconProps {

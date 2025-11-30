@@ -51,7 +51,7 @@ const RecommendationsContainer: React.FC = () => {
       <div className="mt-12 text-center">
         <button
           onClick={() => window.location.reload()}
-          className="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"
         >
           Adjust Preferences & Search Again
         </button>

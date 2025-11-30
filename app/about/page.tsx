@@ -4,62 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Icon from "../../components/Icon";
 
+import { aboutFeatures, aboutStats, aboutValues } from "@/data";
+
 export default function AboutPage() {
-  const features = [
-    {
-      icon: "Sparkles" as const,
-      title: "AI-Powered Recommendations",
-      description:
-        "Our intelligent algorithm analyzes your preferences to suggest destinations that perfectly match your travel style and budget.",
-    },
-    {
-      icon: "Heart" as const,
-      title: "Personalized Experiences",
-      description:
-        "Every recommendation is tailored to you. We consider your interests, activity level, and travel companions for the perfect match.",
-    },
-    {
-      icon: "Shield" as const,
-      title: "Trusted & Secure",
-      description:
-        "Your data is safe with us. We prioritize privacy and only use your preferences to enhance your travel planning experience.",
-    },
-    {
-      icon: "Globe" as const,
-      title: "Global Destinations",
-      description:
-        "Explore destinations across the world, from hidden gems to popular hotspots, all curated based on real traveler experiences.",
-    },
-  ];
-
-  const stats = [
-    { number: "10K+", label: "Happy Travelers" },
-    { number: "500+", label: "Destinations" },
-    { number: "98%", label: "Satisfaction Rate" },
-    { number: "50+", label: "Countries" },
-  ];
-
-  const values = [
-    {
-      icon: "Target" as const,
-      title: "Precision",
-      description:
-        "We match you with destinations that align perfectly with your unique travel preferences.",
-    },
-    {
-      icon: "Users" as const,
-      title: "Community",
-      description:
-        "Join thousands of travelers who trust Travel Smart for their journey planning.",
-    },
-    {
-      icon: "TrendingUp" as const,
-      title: "Innovation",
-      description:
-        "We continuously improve our recommendation engine with the latest travel data.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-linear-to-b from-white via-blue-50/30 to-white">
       {/* Hero Section */}
@@ -116,7 +63,7 @@ export default function AboutPage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {aboutStats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -154,7 +101,7 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
+            {aboutFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -193,7 +140,7 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
+            {aboutValues.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}

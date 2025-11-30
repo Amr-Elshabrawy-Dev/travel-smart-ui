@@ -44,7 +44,7 @@ const OptionSelector = <T extends OptionType>({
               onClick={() => onChange(option.id)}
               aria-pressed={selected === option.id ? "true" : "false"}
               className={`
-                group p-6 rounded-xl border-2 text-left transition-all duration-200
+                group p-6 rounded-xl border-2 text-left transition-all duration-200 cursor-pointer
                 hover:shadow-md hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                 ${
                   selected === option.id

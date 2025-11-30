@@ -26,7 +26,7 @@ const ExperienceSelector: React.FC<ExperienceSelectorProps> = ({
             key={option.id}
             onClick={() => onChange(option.id)}
             className={`
-              p-6 rounded-xl border-2 text-left transition-all
+              p-6 rounded-xl border-2 text-left transition-all cursor-pointer
               ${
                 value === option.id
                   ? "border-blue-600 bg-blue-50"

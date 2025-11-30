@@ -127,7 +127,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         {/* Call to Action */}
         <button
           onClick={handleViewDetails}
-          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg cursor-pointer hover:bg-blue-700 transition-colors"
         >
           View Full Details
         </button>

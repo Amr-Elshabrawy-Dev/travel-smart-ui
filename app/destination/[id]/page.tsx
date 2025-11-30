@@ -50,7 +50,7 @@ const DestinationDetailsPage: React.FC = () => {
           <>
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-3 rounded-full hover:bg-black/80 transition-all hover:scale-110 z-10"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-3 cursor-pointer rounded-full hover:bg-black/80 transition-all hover:scale-110 z-10"
               type="button"
               aria-label="Previous image"
             >
@@ -58,7 +58,7 @@ const DestinationDetailsPage: React.FC = () => {
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-3 rounded-full hover:bg-black/80 transition-all hover:scale-110 z-10"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-3 cursor-pointer rounded-full hover:bg-black/80 transition-all hover:scale-110 z-10"
               type="button"
               aria-label="Next image"
             >
@@ -74,7 +74,7 @@ const DestinationDetailsPage: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 focus:scale-125 focus:outline-none focus:ring-2 focus:ring-white/50 ${
+                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 focus:scale-125 focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer ${
                   index === currentImageIndex
                     ? "bg-white shadow-lg"
                     : "bg-white/40 hover:bg-white/60"
@@ -430,11 +430,11 @@ const DestinationDetailsPage: React.FC = () => {
               // Navigate back to home and show recommendations
               window.location.href = "/journey";
             }}
-            className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors mr-4"
+            className="bg-gray-600 text-white px-6 py-3 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors mr-4"
           >
             ← Back to Recommendations
           </button>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
             Book This Trip
           </button>
         </div>

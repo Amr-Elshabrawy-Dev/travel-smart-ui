@@ -146,13 +146,11 @@ export default function AdvantagesSection() {
               transition={{ duration: 0.3 }}
             >
               {/* Icon with gradient background */}
-              <motion.div
+              <div
                 className={`relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br ${feature.gradient} mb-4`}
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.6 }}
               >
                 <Icon name={feature.icon} size={28} className="text-white" />
-              </motion.div>
+              </div>
 
               {/* Title */}
               <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">

@@ -27,7 +27,7 @@ const BudgetSelector: React.FC<BudgetSelectorProps> = ({
             key={option.id}
             onClick={() => onChange(option.id)}
             className={`
-              p-6 rounded-xl border-2 text-left transition-all
+              p-6 rounded-xl border-2 text-left transition-all cursor-pointer
               ${
                 selected === option.id
                   ? "border-blue-600 bg-blue-50"

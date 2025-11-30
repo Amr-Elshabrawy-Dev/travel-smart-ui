@@ -152,7 +152,7 @@ const WizardContainer: React.FC = () => {
           className={`px-6 py-2 rounded-lg ${
             currentStep === 1
               ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              : "bg-gray-100 text-gray-800 hover:bg-gray-200 cursor-pointer"
           }`}
         >
           Previous
@@ -164,7 +164,7 @@ const WizardContainer: React.FC = () => {
           className={`px-6 py-2 rounded-lg ${
             !isStepValid(currentStep)
               ? "bg-blue-200 text-white cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
           }`}
         >
           {isLastStep() ? "Find Destinations" : "Next"}
