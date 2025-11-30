@@ -2,12 +2,13 @@
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { getDestinationById } from "@/data";
 import Icon from "../../../components/Icon";
 
 const DestinationDetailsPage: React.FC = () => {
   const params = useParams();
+  const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const destination = useMemo(() => {
@@ -428,7 +429,7 @@ const DestinationDetailsPage: React.FC = () => {
           <button
             onClick={() => {
               // Navigate back to home and show recommendations
-              window.location.href = "/journey";
+              router.push("/journey");
             }}
             className="bg-gray-600 text-white px-6 py-3 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors mr-4"
           >
