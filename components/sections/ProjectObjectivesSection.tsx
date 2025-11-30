@@ -176,7 +176,7 @@ export default function ProjectObjectivesSection() {
 
         {/* Stats Section */}
         <motion.div
-          className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-1"
+          className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-[28px] p-1"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}

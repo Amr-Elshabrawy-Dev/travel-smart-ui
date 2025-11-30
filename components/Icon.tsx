@@ -1,4 +1,8 @@
 import {
+  Home,
+  Menu,
+  X,
+  Info,
   Waves,
   Building,
   Mountain,
@@ -38,6 +42,8 @@ import {
   Clock,
   Target,
   ChevronUp,
+  Compass,
+  TrendingUp,
   Linkedin,
   Twitter,
   Instagram,
@@ -46,6 +52,10 @@ import {
 } from "lucide-react";
 
 export type IconName =
+  | "Home"
+  | "Menu"
+  | "X"
+  | "Info"
   | "Waves"
   | "Building"
   | "Mountain"
@@ -85,12 +95,18 @@ export type IconName =
   | "Clock"
   | "Target"
   | "ChevronUp"
+  | "Compass"
+  | "TrendingUp"
   | "Linkedin"
   | "Twitter"
   | "Instagram"
   | "Facebook";
 
 const iconMap: Record<IconName, LucideIcon> = {
+  Home,
+  Menu,
+  X,
+  Info,
   Waves,
   Building,
   Mountain,
@@ -130,6 +146,8 @@ const iconMap: Record<IconName, LucideIcon> = {
   Clock,
   Target,
   ChevronUp,
+  Compass,
+  TrendingUp,
   Linkedin,
   Twitter,
   Instagram,

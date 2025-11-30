@@ -262,7 +262,7 @@ export default function ExclusiveOffersSection() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="relative bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-1 overflow-hidden"
+            className="relative bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-[28px] p-1 overflow-hidden"
             initial={{ scale: 0.95 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}

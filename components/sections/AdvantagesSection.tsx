@@ -137,7 +137,7 @@ export default function AdvantagesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-transparent hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-white rounded-[18px] p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden"
               variants={{
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0 },
@@ -145,12 +145,6 @@ export default function AdvantagesSection() {
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Gradient border effect on hover */}
-              <div
-                className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}
-              />
-              <div className="absolute inset-px bg-white rounded-2xl -z-10" />
-
               {/* Icon with gradient background */}
               <motion.div
                 className={`relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br ${feature.gradient} mb-4`}
