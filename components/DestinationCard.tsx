@@ -18,7 +18,6 @@ const DestinationCard = ({
   matchPercentage,
   matchText,
   weatherText,
-
   onClick,
   variants,
 }: DestinationCardProps) => {

@@ -70,9 +70,9 @@ export default function AllDestinationsPage() {
               placeholder="Search destinations or countries..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg"
+              className="w-full px-6 py-4 rounded-full text-white placeholder:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg"
             />
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white">
               <Icon name="Search" size={24} />
             </div>
           </motion.div>
@@ -89,7 +89,7 @@ export default function AllDestinationsPage() {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === category
-                  ? "bg-blue-600 text-white shadow-lg scale-105"
+                  ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 scale-105"
                   : "bg-white text-gray-600 hover:bg-gray-100 hover:shadow-md"
               }`}
             >

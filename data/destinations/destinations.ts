@@ -658,9 +658,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1533414417583-f019b7ac2bca?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1609863528735-f1b9b7120a0c?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1561134643-63aaca8547c9?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605554041784-1091d8d1f234?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1722524270207-3d2c92b5f5e9?w=800&q=80&auto=format&fit=crop",
     ],
     flightInfo: {
       airlines: ["Air Canada", "WestJet", "United"],
@@ -755,9 +755,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1542259671-fa05240f5298?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1566375638495-0d6bfd849e17?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1589407355263-2682d11f5894?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556206079-747a7a424d3d?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1678156913491-d9a6b5f33db1?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1623055576799-e0644e49887a?w=800&q=80&auto=format&fit=crop",
     ],
     flightInfo: {
       airlines: ["Hawaiian", "United", "American"],
@@ -852,9 +852,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1546436836-07a91091f160?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=800&q=80&auto=format&fit=crop",
     ],
     flightInfo: {
       airlines: ["Delta", "JetBlue", "United"],

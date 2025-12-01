@@ -35,6 +35,7 @@ import {
   Music,
   Navigation,
   Plane,
+  Search,
   Send,
   Shield,
   Sparkles,
@@ -88,6 +89,7 @@ export type IconName =
   | "Music"
   | "Navigation"
   | "Plane"
+  | "Search"
   | "Send"
   | "Shield"
   | "Sparkles"
@@ -141,6 +143,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Music,
   Navigation,
   Plane,
+  Search,
   Send,
   Shield,
   Sparkles,

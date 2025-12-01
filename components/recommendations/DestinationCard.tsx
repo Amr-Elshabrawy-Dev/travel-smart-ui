@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import WizardContext from "../../contexts/WizardContext";
+import Icon from "../Icon";
 import type { Destination } from "@/data";
 
 interface DestinationCardProps {
@@ -16,6 +18,14 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
 }) => {
   const router = useRouter();
   const wizardContext = useContext(WizardContext);
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
+  const [imageError, setImageError] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  // Ensure component is mounted on client side to prevent hydration issues
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleViewDetails = () => {
     // Save complete wizard state to localStorage before navigating (client-side only)
@@ -34,12 +44,36 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
     <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
       {/* Hero Image */}
       <div className="relative h-64 bg-gray-200">
-        {destination.images[0] && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+        {/* Loading skeleton - shown while not mounted or loading */}
+        {(!isMounted || (!isImageLoaded && !imageError)) && (
+          <div className="absolute inset-0 bg-linear-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse" />
+        )}
+
+        {/* Error state */}
+        {isMounted && imageError && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+            <div className="text-center text-gray-400">
+              <Icon name="MapPin" size={32} className="mx-auto mb-2" />
+              <p className="text-sm">Image unavailable</p>
+            </div>
+          </div>
+        )}
+
+        {/* Actual Image - only render on client side */}
+        {isMounted && destination.images[0] && (
+          <Image
             src={destination.images[0]}
             alt={`${destination.name} - ${destination.country}`}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition-opacity duration-500 ${
+              isImageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => setIsImageLoaded(true)}
+            onError={() => {
+              setImageError(true);
+              setIsImageLoaded(false);
+            }}
           />
         )}
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/50" />

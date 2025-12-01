@@ -9,7 +9,15 @@ import Icon from "../Icon";
 
 const MotionLink = motion(Link);
 
-const categories = ["All", "Beach", "City", "Adventure", "Luxury"];
+const categories = [
+  "All",
+  "Beach",
+  "City",
+  "Adventure",
+  "Luxury",
+  "Mountain",
+  "Cultural",
+];
 
 export default function PopularDestinationsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -59,94 +67,17 @@ export default function PopularDestinationsSection() {
     },
   };
 
-  // Expanded destination data
-  const destinationData = [
-    {
-      iconName: "MapPin",
-      imageUrl: destinations[0].images[0],
-      title: "Santorini, Greece",
-      description: "Romantic sunsets and volcanic beaches",
-      price: "$2,300",
-      perNightPrice: "from $184/night",
-      matchPercentage: 95,
-      matchText: "Top Match",
-      weatherText: "Perfect Weather",
-      sunColor: "orange-400",
-      category: "Beach",
-    },
-    {
-      iconName: "MapPin",
-      imageUrl: destinations[1].images[0],
-      title: "Barcelona, Spain",
-      description: "Architectural masterpieces and vibrant culture",
-      price: "$1,700",
-      perNightPrice: "from $136/night",
-      matchPercentage: 92,
-      matchText: "Great Match",
-      weatherText: "Nightlife Hotspot",
-      sunColor: "purple-400",
-      category: "City",
-    },
-    {
-      iconName: "MapPin",
-      imageUrl: destinations[3].images[0],
-      title: "Bali, Indonesia",
-      description: "Tropical paradise with spiritual vibes",
-      price: "$1,800",
-      perNightPrice: "from $143/night",
-      matchPercentage: 91,
-      matchText: "Excellent",
-      weatherText: "Affordable Luxury",
-      sunColor: "orange-400",
-      category: "Beach",
-    },
-    {
-      iconName: "MapPin",
-      imageUrl: destinations[2].images[0],
-      title: "Tokyo, Japan",
-      description: "Cutting-edge technology meets ancient traditions",
-      price: "$2,100",
-      perNightPrice: "from $168/night",
-      matchPercentage: 89,
-      matchText: "Must Visit",
-      weatherText: "Cultural Hub",
-      sunColor: "red-400",
-      category: "City",
-    },
-    {
-      iconName: "MapPin",
-      imageUrl:
-        "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&q=80&auto=format&fit=crop",
-      title: "Queenstown, New Zealand",
-      description: "Adventure capital with stunning alpine scenery",
-      price: "$2,500",
-      perNightPrice: "from $200/night",
-      matchPercentage: 88,
-      matchText: "Trending",
-      weatherText: "Adventure Paradise",
-      sunColor: "green-400",
-      category: "Adventure",
-    },
-    {
-      iconName: "MapPin",
-      imageUrl:
-        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80&auto=format&fit=crop",
-      title: "Dubai, UAE",
-      description: "Luxury shopping and ultramodern architecture",
-      price: "$2,800",
-      perNightPrice: "from $224/night",
-      matchPercentage: 87,
-      matchText: "Premium",
-      weatherText: "Luxury Experience",
-      sunColor: "yellow-400",
-      category: "Luxury",
-    },
-  ];
-
+  // Filter destinations by category
   const filteredDestinations =
     activeCategory === "All"
-      ? destinationData
-      : destinationData.filter((dest) => dest.category === activeCategory);
+      ? destinations.slice(0, 6) // Show first 6 destinations for "All"
+      : destinations
+          .filter((dest) =>
+            dest.tags.some(
+              (tag) => tag.toLowerCase() === activeCategory.toLowerCase()
+            )
+          )
+          .slice(0, 6); // Show up to 6 destinations per category
 
   return (
     <motion.section
@@ -210,19 +141,17 @@ export default function PopularDestinationsSection() {
           viewport={{ once: true }}
         >
           {categories.map((category) => (
-            <motion.button
+            <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-full font-medium cursor-pointer transition-all ${
+              className={`px-6 py-2 rounded-full text-sm font-medium cursor-pointer duration-300 transition-all ${
                 activeCategory === category
-                  ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30"
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 scale-105"
+                  : "bg-white text-gray-600 hover:bg-gray-100 hover:shadow-md"
               }`}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
             >
               {category}
-            </motion.button>
+            </button>
           ))}
         </motion.div>
 
@@ -235,19 +164,23 @@ export default function PopularDestinationsSection() {
           variants={containerVariants}
           key={activeCategory} // Re-trigger animation on category change
         >
-          {filteredDestinations.map((destination, index) => (
+          {filteredDestinations.map((destination) => (
             <DestinationCard
-              key={`${destination.title}-${index}`}
+              key={destination.id}
               iconName="MapPin"
-              imageUrl={destination.imageUrl}
-              title={destination.title}
-              description={destination.description}
-              price={destination.price}
-              perNightPrice={destination.perNightPrice}
-              matchPercentage={destination.matchPercentage}
-              matchText={destination.matchText}
-              weatherText={destination.weatherText}
-              sunColor={destination.sunColor as string}
+              imageUrl={destination.images[0]}
+              title={`${destination.name}, ${destination.country}`}
+              description={destination.highlights[0]}
+              price={`$${destination.estimatedCost.total}`}
+              perNightPrice={`from $${Math.round(
+                destination.estimatedCost.accommodation / 7
+              )}/night`}
+              matchPercentage={destination.confidenceScore}
+              matchText={
+                destination.confidenceScore >= 90 ? "Top Match" : "Great Match"
+              }
+              weatherText={destination.weather.season}
+              sunColor="orange-400"
               variants={cardVariants}
             />
           ))}
