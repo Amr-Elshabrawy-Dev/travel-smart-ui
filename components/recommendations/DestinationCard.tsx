@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/navigation";
-import { useWizard } from "../../contexts/WizardContext";
+import WizardContext from "../../contexts/WizardContext";
 import type { Destination } from "@/data";
 
 interface DestinationCardProps {
@@ -15,11 +15,12 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
   variant = "compact",
 }) => {
   const router = useRouter();
-  const { preferences, currentStep } = useWizard();
+  const wizardContext = useContext(WizardContext);
 
   const handleViewDetails = () => {
     // Save complete wizard state to localStorage before navigating (client-side only)
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && wizardContext) {
+      const { preferences, currentStep } = wizardContext;
       localStorage.setItem(
         "savedWizardPreferences",
         JSON.stringify(preferences)

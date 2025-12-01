@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 import DestinationCard from "../DestinationCard";
 import { destinations } from "@/data";
 import Icon from "../Icon";
+
+const MotionLink = motion(Link);
 
 const categories = ["All", "Beach", "City", "Adventure", "Luxury"];
 
@@ -258,8 +261,8 @@ export default function PopularDestinationsSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <motion.a
-            href="/destinations"
+          <MotionLink
+            href="/destination"
             className="group inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-blue-500/50 transition-shadow"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -274,7 +277,7 @@ export default function PopularDestinationsSection() {
             >
               <Icon name="ArrowRight" size={20} className="ml-1" />
             </motion.div>
-          </motion.a>
+          </MotionLink>
 
           <motion.p
             className="mt-4 text-sm text-gray-500 flex items-center justify-center gap-2"
