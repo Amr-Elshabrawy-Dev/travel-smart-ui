@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { getDestinationById } from "@/data";
 import Icon from "../../../components/Icon";
 
@@ -426,18 +427,31 @@ const DestinationDetailsPage: React.FC = () => {
 
         {/* Back Button */}
         <div className="mt-8 text-center">
-          <button
+          <motion.button
             onClick={() => {
               // Navigate back to home and show recommendations
               router.push("/journey");
             }}
-            className="bg-gray-600 text-white px-6 py-3 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors mr-4"
+            className="inline-flex items-center px-8 py-4 bg-white border border-gray-200 text-gray-700 font-semibold rounded-full shadow-lg hover:shadow-xl hover:border-blue-200 hover:text-blue-600 mr-4 transition-colors cursor-pointer group"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
-            ← Back to Recommendations
-          </button>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
+            <Icon
+              name="ArrowRight"
+              size={20}
+              className="mr-2 rotate-180 group-hover:-translate-x-1 transition-transform"
+            />
+            Back to Recommendations
+          </motion.button>
+          <motion.button
+            onClick={() => router.push(`/booking/${destination.id}`)}
+            className="inline-flex items-center px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-blue-500/50 transition-shadow whitespace-nowrap cursor-pointer"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Icon name="Calendar" size={20} className="mr-2" />
             Book This Trip
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
