@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Icon from "../Icon";
+import Icon from "./Icon";
 
 const footerLinks = {
   destinations: [
@@ -61,7 +61,7 @@ const socialLinks = [
   }, // Using Map as placeholder
 ];
 
-export default function FooterSection() {
+export default function Footer() {
   return (
     <footer className="relative bg-linear-to-b from-gray-900 via-gray-900 to-black text-white overflow-hidden">
       {/* Decorative background elements */}

@@ -213,7 +213,7 @@ export default function PopularDestinationsSection() {
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+              className={`px-5 py-2.5 rounded-full font-medium cursor-pointer transition-all ${
                 activeCategory === category
                   ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30"
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"

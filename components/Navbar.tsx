@@ -37,6 +37,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home", icon: "Home" as const },
     { href: "/journey", label: "Plan Trip", icon: "MapPin" as const },
+    { href: "/destination", label: "Destinations", icon: "Globe" as const },
     { href: "/about", label: "About", icon: "Info" as const },
   ];
 

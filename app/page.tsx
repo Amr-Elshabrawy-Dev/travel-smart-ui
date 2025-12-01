@@ -5,7 +5,6 @@ import ProjectObjectivesSection from "../components/sections/ProjectObjectivesSe
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import PopularDestinationsSection from "../components/sections/PopularDestinationsSection";
 import ExclusiveOffersSection from "../components/sections/ExclusiveOffersSection";
-import FooterSection from "../components/sections/FooterSection";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <AdvantagesSection />
       <PopularDestinationsSection />
       <ExclusiveOffersSection />
-      <FooterSection />
     </main>
   );
 }
