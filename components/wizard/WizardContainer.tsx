@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import { useWizard } from "../../contexts/WizardContext";
 import StepIndicator from "./StepIndicator";
 import ExperienceSelector from "./ExperienceSelector";
@@ -146,29 +147,40 @@ const WizardContainer: React.FC = () => {
       <div className="mt-8">{currentStepComponent}</div>
 
       <div className="flex justify-between mt-8">
-        <button
+        <motion.button
           onClick={previousStep}
           disabled={currentStep === 1}
-          className={`px-6 py-2 rounded-lg ${
+          whileHover={currentStep !== 1 ? { scale: 1.05 } : {}}
+          whileTap={currentStep !== 1 ? { scale: 0.95 } : {}}
+          className={`px-6 py-2 rounded-full font-medium transition-all shadow-md ${
             currentStep === 1
-              ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-              : "bg-gray-100 text-gray-800 hover:bg-gray-200 cursor-pointer"
+              ? "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
+              : "bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg border border-gray-200 cursor-pointer"
           }`}
         >
           Previous
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
           onClick={handleFindDestinations}
           disabled={!isStepValid(currentStep)}
-          className={`px-6 py-2 rounded-lg ${
+          whileHover={
+            isStepValid(currentStep)
+              ? {
+                  scale: 1.05,
+                  boxShadow: "0 10px 15px -3px rgba(59, 130, 246, 0.5)",
+                }
+              : {}
+          }
+          whileTap={isStepValid(currentStep) ? { scale: 0.95 } : {}}
+          className={`px-8 py-2 rounded-full font-bold transition-all shadow-md ${
             !isStepValid(currentStep)
-              ? "bg-blue-200 text-white cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
+              ? "bg-blue-200 text-white cursor-not-allowed shadow-none"
+              : "bg-linear-to-r from-blue-600 to-purple-600 text-white cursor-pointer hover:shadow-blue-500/50"
           }`}
         >
           {isLastStep() ? "Find Destinations" : "Next"}
-        </button>
+        </motion.button>
       </div>
     </div>
   );

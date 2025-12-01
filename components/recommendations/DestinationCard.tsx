@@ -47,7 +47,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
           <h2 className="text-2xl font-bold">{destination.name}</h2>
           <p className="text-lg">{destination.country}</p>
         </div>
-        <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full">
+        <div className="absolute top-4 right-4 bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full">
           {destination.confidenceScore}% Match
         </div>
       </div>
@@ -68,7 +68,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         </div>
 
         {/* Weather & Dates */}
-        <div className="flex justify-between items-start p-4 bg-gray-50 rounded-lg">
+        <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
           <div>
             <h4 className="font-medium mb-1">Suggested Dates</h4>
             <p className="text-gray-600 text-sm">
@@ -128,7 +128,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         {/* Call to Action */}
         <button
           onClick={handleViewDetails}
-          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg cursor-pointer hover:bg-blue-700 transition-colors"
+          className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg cursor-pointer"
         >
           View Full Details
         </button>

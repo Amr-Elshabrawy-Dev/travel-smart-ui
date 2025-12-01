@@ -1,7 +1,7 @@
-"use client";
-
 import React from "react";
+import { motion } from "framer-motion";
 import { useWizard } from "../../contexts/WizardContext";
+import Icon from "../Icon";
 
 interface StepLabel {
   id: number;
@@ -10,13 +10,13 @@ interface StepLabel {
 }
 
 const steps: StepLabel[] = [
-  { id: 1, label: "Experience Type", shortLabel: "Type" },
-  { id: 2, label: "Travel Companion", shortLabel: "Who" },
-  { id: 3, label: "Activity Level", shortLabel: "Activity" },
-  { id: 4, label: "Budget Range", shortLabel: "Budget" },
-  { id: 5, label: "Duration", shortLabel: "Length" },
-  { id: 6, label: "Flight Distance", shortLabel: "Distance" },
-  { id: 7, label: "Special Requirements", shortLabel: "Extras" },
+  { id: 1, label: "Experience", shortLabel: "Type" },
+  { id: 2, label: "Companions", shortLabel: "Who" },
+  { id: 3, label: "Activity", shortLabel: "Pace" },
+  { id: 4, label: "Budget", shortLabel: "Cost" },
+  { id: 5, label: "Duration", shortLabel: "Time" },
+  { id: 6, label: "Distance", shortLabel: "Flight" },
+  { id: 7, label: "Extras", shortLabel: "Reqs" },
 ];
 
 const StepIndicator: React.FC = () => {
@@ -29,53 +29,91 @@ const StepIndicator: React.FC = () => {
   };
 
   return (
-    <div className="hidden md:flex justify-between items-center w-full">
-      {steps.map((step, index) => {
-        const status = getStepStatus(step.id);
-        const canNavigate = step.id < currentStep && isStepValid(step.id);
+    <div className="w-full py-6">
+      <div className="flex justify-between items-center relative">
+        {/* Background Line */}
+        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-gray-100 rounded-full -z-10" />
 
-        return (
-          <React.Fragment key={step.id}>
-            {index > 0 && (
-              <div
-                className={`flex-1 h-1 ${
-                  status === "completed" ? "bg-blue-600" : "bg-gray-200"
-                }`}
-              />
-            )}
+        {/* Progress Line */}
+        <motion.div
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 h-1 bg-linear-to-r from-blue-600 to-purple-600 rounded-full -z-10"
+          initial={{ width: "0%" }}
+          animate={{
+            width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        />
 
-            <button
-              onClick={() => canNavigate && goToStep(step.id)}
-              disabled={!canNavigate}
-              className={`
-                flex flex-col items-center relative
-                ${canNavigate ? "cursor-pointer" : "cursor-default"}
-              `}
-            >
-              <div
+        {steps.map((step) => {
+          const status = getStepStatus(step.id);
+          const canNavigate = step.id < currentStep && isStepValid(step.id);
+          const isCompleted = status === "completed";
+          const isActive = status === "active";
+
+          return (
+            <div key={step.id} className="relative flex flex-col items-center">
+              <motion.button
+                onClick={() => canNavigate && goToStep(step.id)}
+                disabled={!canNavigate}
                 className={`
-                  w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
-                  ${status === "active" ? "bg-blue-600 text-white" : ""}
-                  ${status === "completed" ? "bg-blue-600 text-white" : ""}
-                  ${status === "upcoming" ? "bg-gray-200 text-gray-500" : ""}
+                  w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-colors duration-300 z-10
+                  ${
+                    isActive
+                      ? "bg-white border-blue-600 text-blue-600 shadow-lg shadow-blue-200"
+                      : isCompleted
+                      ? "bg-linear-to-r from-blue-600 to-purple-600 border-transparent text-white"
+                      : "bg-white border-gray-200 text-gray-400"
+                  }
+                  ${
+                    canNavigate
+                      ? "cursor-pointer hover:scale-110"
+                      : "cursor-default"
+                  }
                 `}
+                whileHover={canNavigate ? { scale: 1.1 } : {}}
+                whileTap={canNavigate ? { scale: 0.95 } : {}}
+                animate={{
+                  scale: isActive ? 1.2 : 1,
+                  backgroundColor: isCompleted
+                    ? "#4F46E5" // Fallback color for animation
+                    : isActive
+                    ? "#ffffff"
+                    : "#ffffff",
+                }}
               >
-                {step.id}
-              </div>
-              <span
+                {isCompleted ? (
+                  <Icon name="Check" size={16} className="text-white" />
+                ) : (
+                  step.id
+                )}
+              </motion.button>
+
+              {/* Label */}
+              <motion.div
                 className={`
-                absolute top-10 text-xs font-medium whitespace-nowrap
-                ${status === "active" ? "text-blue-600" : ""}
-                ${status === "completed" ? "text-gray-600" : ""}
-                ${status === "upcoming" ? "text-gray-400" : ""}
-              `}
+                  absolute top-12 text-xs font-medium whitespace-nowrap
+                  ${
+                    isActive
+                      ? "text-blue-600 font-bold"
+                      : isCompleted
+                      ? "text-gray-700"
+                      : "text-gray-400"
+                  }
+                `}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: isActive ? 1.1 : 1,
+                }}
               >
-                {step.label}
-              </span>
-            </button>
-          </React.Fragment>
-        );
-      })}
+                <span className="hidden md:block">{step.label}</span>
+                <span className="md:hidden">{step.shortLabel}</span>
+              </motion.div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
