@@ -4,6 +4,7 @@ import {
   Apple,
   ArrowRight,
   Baby,
+  Bot,
   Building,
   Calendar,
   Castle,
@@ -34,6 +35,7 @@ import {
   Music,
   Navigation,
   Plane,
+  Send,
   Shield,
   Sparkles,
   Star,
@@ -57,6 +59,7 @@ export type IconName =
   | "Apple"
   | "ArrowRight"
   | "Baby"
+  | "Bot"
   | "Building"
   | "Calendar"
   | "Castle"
@@ -85,6 +88,7 @@ export type IconName =
   | "Music"
   | "Navigation"
   | "Plane"
+  | "Send"
   | "Shield"
   | "Sparkles"
   | "Star"
@@ -108,6 +112,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Apple,
   ArrowRight,
   Baby,
+  Bot,
   Building,
   Calendar,
   Castle,
@@ -136,6 +141,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Music,
   Navigation,
   Plane,
+  Send,
   Shield,
   Sparkles,
   Star,
