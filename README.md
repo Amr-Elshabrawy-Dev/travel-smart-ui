@@ -4,6 +4,22 @@ A modern, AI-powered travel planning and booking platform built with Next.js 14,
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.1-000000?style=flat&logo=next.js)](https://nextjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![Gemini AI](https://img.shields.io/badge/Gemini-AI-4285F4?style=flat&logo=google&logoColor=white)](https://ai.google.dev/)
 
+### 👁️ Project Preview
+
+<details>
+<summary>🌐 <strong>Click to view application screenshot</strong></summary>
+<br>
+<img width="100%" src="./public/screencapture.png" alt="Travel Smart Preview">
+</details>
+
+<br>
+
+| 🔗 Links        | 📍 Action                                                                  |
+| --------------- | -------------------------------------------------------------------------- |
+| **Live Demo**   | [👉 Visit TravelSmart](https://travel-smart-ui.vercel.app/)                |
+| **Source Code** | [👉 View on GitHub](https://github.com/Amr-Elshabrawy-Dev/travel-smart-ui) |
+| **Contact**     | [📧 Email Me](mailto:amrelshabrawy.dev@gmail.com)                          |
+
 ## ✨ Features
 
 - **🤖 AI-Powered Assistant**: Conversational AI using Google Gemini for personalized travel recommendations
@@ -80,40 +96,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 \`\`\`bash
 npm run build
 npm start
-\`\`\`
-
-## 📁 Project Structure
-
-\`\`\`
-travel-smart-ui/
-├── app/ # Next.js app directory
-│ ├── about/ # About page
-│ ├── booking/[id]/ # Booking flow
-│ ├── destination/ # Destination pages
-│ │ ├── [id]/ # Individual destination
-│ │ └── page.tsx # All destinations
-│ ├── journey/ # Travel wizard
-│ ├── layout.tsx # Root layout
-│ └── page.tsx # Homepage
-├── components/ # React components
-│ ├── chat/ # AI chat widget
-│ ├── hero/ # Hero sections
-│ ├── recommendations/ # Destination cards
-│ ├── sections/ # Page sections
-│ ├── wizard/ # Wizard components
-│ ├── Footer.tsx
-│ ├── Icon.tsx
-│ └── Navbar.tsx
-├── contexts/ # React contexts
-│ └── WizardContext.tsx
-├── data/ # Static data
-│ ├── destinations/ # Destination database
-│ └── ui/ # UI content
-├── hooks/ # Custom React hooks
-│ └── useChat.ts # AI chat logic
-├── lib/ # Utilities
-│ └── gemini.ts # Gemini AI service
-└── public/ # Static assets
 \`\`\`
 
 ## 🎯 Key Features Explained
