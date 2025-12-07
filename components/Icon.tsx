@@ -27,6 +27,7 @@ import {
   Info,
   Instagram,
   Linkedin,
+  Loader,
   LucideIcon,
   Map,
   MapPin,
@@ -82,6 +83,7 @@ export type IconName =
   | "Info"
   | "Instagram"
   | "Linkedin"
+  | "Loader"
   | "Map"
   | "MapPin"
   | "Menu"
@@ -136,6 +138,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Info,
   Instagram,
   Linkedin,
+  Loader,
   Map,
   MapPin,
   Menu,

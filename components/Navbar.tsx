@@ -15,7 +15,7 @@ export default function Navbar() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 1000],
-    ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.65)"]
+    ["rgba(255, 255, 255, 1)", "rgba(255, 255, 255, 0.45)"]
   );
 
   const borderOpacity = useTransform(scrollY, [0, 1000], [0, 0.1]);
@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 group">
+            <Link href="/" className="flex items-center space-x-2 group ">
               <motion.div
                 className="relative"
                 whileHover={{ scale: 1.05 }}
@@ -72,7 +72,7 @@ export default function Navbar() {
                   <Icon name="Plane" size={24} className="text-white" />
                 </div>
               </motion.div>
-              <span className="text-xl md:text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl lg:text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Travel Smart
               </span>
             </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <motion.div
-                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                    className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-all ${
                       isActive(link.href)
                         ? "text-blue-600 bg-blue-50"
                         : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
@@ -90,7 +90,7 @@ export default function Navbar() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-2 text-xs lg:text-sm text-nowrap">
                       <Icon
                         name={link.icon}
                         size={18}
@@ -107,7 +107,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <Link href="/journey">
                 <motion.button
-                  className="px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center space-x-2"
+                  className="px-4 lg:px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center lg:space-x-2 space-x-1"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -172,9 +172,6 @@ export default function Navbar() {
           </div>
         </motion.div>
       </motion.nav>
-
-      {/* Spacer to prevent content from going under fixed navbar */}
-      <div className="h-16 md:h-20" />
     </>
   );
 }

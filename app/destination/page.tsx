@@ -36,7 +36,7 @@ export default function AllDestinationsPage() {
       <section className="relative bg-blue-900 text-white py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-r from-blue-900 to-purple-900 opacity-90" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80')] bg-cover bg-center mix-blend-overlay opacity-50" />
+          <div className="absolute inset-0 bg-[url('/images/destination-hero.avif')] bg-cover bg-center mix-blend-overlay opacity-50" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">

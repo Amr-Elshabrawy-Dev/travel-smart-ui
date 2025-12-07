@@ -201,7 +201,7 @@ export default function AdvantagesSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-6 px-6 py-4 bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
+          <div className="inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 px-6 py-4 bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
             <div className="flex items-center gap-2 text-sm">
               <Icon name="Users" size={18} className="text-blue-600" />
               <span className="text-gray-700">
@@ -209,7 +209,7 @@ export default function AdvantagesSection() {
                 Travelers
               </span>
             </div>
-            <div className="h-6 w-px bg-gray-300" />
+            <div className="hidden md:block h-6 w-px bg-gray-300" />
             <div className="flex items-center gap-2 text-sm">
               <Icon name="Star" size={18} className="text-yellow-500" />
               <span className="text-gray-700">
@@ -217,7 +217,7 @@ export default function AdvantagesSection() {
                 Rating
               </span>
             </div>
-            <div className="h-6 w-px bg-gray-300" />
+            <div className="hidden md:block h-6 w-px bg-gray-300" />
             <div className="flex items-center gap-2 text-sm">
               <Icon name="MapPin" size={18} className="text-green-600" />
               <span className="text-gray-700">

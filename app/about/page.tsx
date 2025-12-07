@@ -8,7 +8,7 @@ import { aboutFeatures, aboutStats, aboutValues } from "@/data";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-white via-blue-50/30 to-white">
+    <div className="min-h-screen bg-linear-to-b from-white via-blue-50/30 to-white mt-16 md:mt-20">
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
