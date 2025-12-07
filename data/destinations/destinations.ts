@@ -76,9 +76,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613395877614-8b45ab6d5cbb?w=800&q=80&auto=format&fit=crop",
+      "/images/santorini-greece-1.jpeg",
+      "/images/santorini-greece-2.jpeg",
+      "/images/santorini-greece-3.jpg",
     ],
     flightInfo: {
       airlines: ["British Airways", "easyJet", "Ryanair"],
@@ -173,9 +173,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=800&q=80&auto=format&fit=crop",
+      "/images/barcelona-spain-1.jpeg",
+      "/images/barcelona-spain-2.jpeg",
+      "/images/barcelona-spain-3.jpeg",
     ],
     flightInfo: {
       airlines: ["British Airways", "Vueling", "Ryanair"],
@@ -270,9 +270,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&q=80&auto=format&fit=crop",
+      "/images/reykjavik-iceland-1.jpeg",
+      "/images/reykjavik-iceland-2.jpeg",
+      "/images/reykjavik-iceland-3.jpeg",
     ],
     flightInfo: {
       airlines: ["Icelandair", "British Airways", "easyJet"],
@@ -367,9 +367,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80&auto=format&fit=crop",
+      "/images/bali-indonesia-1.jpeg",
+      "/images/bali-indonesia-2.jpeg",
+      "/images/bali-indonesia-3.jpeg",
     ],
     flightInfo: {
       airlines: ["Singapore Airlines", "Emirates", "Qatar Airways"],
@@ -464,9 +464,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800&q=80&auto=format&fit=crop",
+      "/images/dubai-uae-1.jpeg",
+      "/images/dubai-uae-2.jpeg",
+      "/images/dubai-uae-3.jpg",
     ],
     flightInfo: {
       airlines: ["Emirates", "British Airways", "Virgin Atlantic"],
@@ -561,9 +561,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1624253321171-1be53e12f5f4?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80&auto=format&fit=crop",
+      "/images/kyoto-japan-1.jpeg",
+      "/images/kyoto-japan-2.jpeg",
+      "/images/kyoto-japan-3.jpeg",
     ],
     flightInfo: {
       airlines: ["JAL", "ANA", "United"],
@@ -658,9 +658,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1605554041784-1091d8d1f234?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1722524270207-3d2c92b5f5e9?w=800&q=80&auto=format&fit=crop",
+      "/images/banff-canada-1.jpeg",
+      "/images/banff-canada-2.jpeg",
+      "/images/banff-canada-3.jpeg",
     ],
     flightInfo: {
       airlines: ["Air Canada", "WestJet", "United"],
@@ -755,9 +755,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1556206079-747a7a424d3d?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1678156913491-d9a6b5f33db1?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1623055576799-e0644e49887a?w=800&q=80&auto=format&fit=crop",
+      "/images/maui-hawaii-1.jpeg",
+      "/images/maui-hawaii-2.jpeg",
+      "/images/maui-hawaii-3.jpeg",
     ],
     flightInfo: {
       airlines: ["Hawaiian", "United", "American"],
@@ -852,9 +852,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=800&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=800&q=80&auto=format&fit=crop",
+      "/images/nyc-usa-1.jpeg",
+      "/images/nyc-usa-2.jpeg",
+      "/images/nyc-usa-3.jpeg",
     ],
     flightInfo: {
       airlines: ["Delta", "JetBlue", "United"],

@@ -123,10 +123,10 @@ export default function Footer() {
 
         {/* Main Footer Content */}
         <div className="py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10">
             {/* Brand Column */}
             <motion.div
-              className="lg:col-span-1"
+              className="col-span-2 md:col-span-4 lg:col-span-3"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -155,6 +155,7 @@ export default function Footer() {
 
             {/* Destinations */}
             <motion.div
+              className="col-span-1 md:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -182,6 +183,7 @@ export default function Footer() {
 
             {/* Company */}
             <motion.div
+              className="col-span-1 md:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -209,6 +211,7 @@ export default function Footer() {
 
             {/* Support */}
             <motion.div
+              className="col-span-1 md:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -236,6 +239,7 @@ export default function Footer() {
 
             {/* Legal */}
             <motion.div
+              className="col-span-1 md:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -259,28 +263,25 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-
-              {/* Social Links */}
-              <div>
-                <h5 className="font-semibold mb-3 text-white text-sm">
-                  Follow Us
-                </h5>
-                <div className="flex gap-3">
-                  {socialLinks.map((social) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      className={`p-2 bg-gray-800 rounded-full ${social.color} transition-colors`}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      aria-label={social.name}
-                    >
-                      <Icon name={social.icon} size={18} />
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
             </motion.div>
+          </div>
+          {/* Social Links */}
+          <div className="mt-6 ">
+            <h5 className="font-semibold mb-3 text-white text-sm">Follow Us</h5>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  className={`p-2 bg-gray-800 rounded-full ${social.color} transition-colors`}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={social.name}
+                >
+                  <Icon name={social.icon} size={18} />
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
 
