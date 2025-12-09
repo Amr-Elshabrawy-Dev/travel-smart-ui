@@ -33,9 +33,8 @@ export default function AboutPage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.5, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="bg-linear-to-br from-blue-600 to-purple-600 rounded-3xl p-12 md:p-16 text-white shadow-2xl"
           >

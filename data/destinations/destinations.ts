@@ -76,9 +76,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/santorini-greece-1.jpeg",
-      "/images/santorini-greece-2.jpeg",
-      "/images/santorini-greece-3.jpg",
+      "/images/santorini-greece-1.webp",
+      "/images/santorini-greece-2.webp",
+      "/images/santorini-greece-3.webp",
     ],
     flightInfo: {
       airlines: ["British Airways", "easyJet", "Ryanair"],
@@ -173,9 +173,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/barcelona-spain-1.jpeg",
-      "/images/barcelona-spain-2.jpeg",
-      "/images/barcelona-spain-3.jpeg",
+      "/images/barcelona-spain-1.webp",
+      "/images/barcelona-spain-2.webp",
+      "/images/barcelona-spain-3.webp",
     ],
     flightInfo: {
       airlines: ["British Airways", "Vueling", "Ryanair"],
@@ -270,9 +270,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/reykjavik-iceland-1.jpeg",
-      "/images/reykjavik-iceland-2.jpeg",
-      "/images/reykjavik-iceland-3.jpeg",
+      "/images/reykjavik-iceland-1.webp",
+      "/images/reykjavik-iceland-2.webp",
+      "/images/reykjavik-iceland-3.webp",
     ],
     flightInfo: {
       airlines: ["Icelandair", "British Airways", "easyJet"],
@@ -367,9 +367,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/bali-indonesia-1.jpeg",
-      "/images/bali-indonesia-2.jpeg",
-      "/images/bali-indonesia-3.jpeg",
+      "/images/bali-indonesia-1.webp",
+      "/images/bali-indonesia-2.webp",
+      "/images/bali-indonesia-3.webp",
     ],
     flightInfo: {
       airlines: ["Singapore Airlines", "Emirates", "Qatar Airways"],
@@ -464,9 +464,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/dubai-uae-1.jpeg",
-      "/images/dubai-uae-2.jpeg",
-      "/images/dubai-uae-3.jpg",
+      "/images/dubai-uae-1.webp",
+      "/images/dubai-uae-2.webp",
+      "/images/dubai-uae-3.webp",
     ],
     flightInfo: {
       airlines: ["Emirates", "British Airways", "Virgin Atlantic"],
@@ -561,9 +561,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/kyoto-japan-1.jpeg",
-      "/images/kyoto-japan-2.jpeg",
-      "/images/kyoto-japan-3.jpeg",
+      "/images/kyoto-japan-1.webp",
+      "/images/kyoto-japan-2.webp",
+      "/images/kyoto-japan-3.webp",
     ],
     flightInfo: {
       airlines: ["JAL", "ANA", "United"],
@@ -658,9 +658,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/banff-canada-1.jpeg",
-      "/images/banff-canada-2.jpeg",
-      "/images/banff-canada-3.jpeg",
+      "/images/banff-canada-1.webp",
+      "/images/banff-canada-2.webp",
+      "/images/banff-canada-3.webp",
     ],
     flightInfo: {
       airlines: ["Air Canada", "WestJet", "United"],
@@ -755,9 +755,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/maui-hawaii-1.jpeg",
-      "/images/maui-hawaii-2.jpeg",
-      "/images/maui-hawaii-3.jpeg",
+      "/images/maui-hawaii-1.webp",
+      "/images/maui-hawaii-2.webp",
+      "/images/maui-hawaii-3.webp",
     ],
     flightInfo: {
       airlines: ["Hawaiian", "United", "American"],
@@ -852,9 +852,9 @@ export const destinations: Destination[] = [
       },
     ],
     images: [
-      "/images/nyc-usa-1.jpeg",
-      "/images/nyc-usa-2.jpeg",
-      "/images/nyc-usa-3.jpeg",
+      "/images/nyc-usa-1.webp",
+      "/images/nyc-usa-2.webp",
+      "/images/nyc-usa-3.webp",
     ],
     flightInfo: {
       airlines: ["Delta", "JetBlue", "United"],
